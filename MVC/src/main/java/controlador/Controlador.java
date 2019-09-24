@@ -8,7 +8,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.Modelo;
-import vista.vista;
+import vista.Vista;
 
 /**
  *
@@ -16,12 +16,13 @@ import vista.vista;
 public class Controlador implements ActionListener {
     
     
-    private vista view;
+    private Vista view;
     private Modelo model;
 
-    public Controlador(vista view, Modelo model) {
+    public Controlador(Vista view, Modelo model) {
         this.view = view;
         this.model = model;
+        this.view.bnMultiplicar.addActionListener(this);
     }
     
     
