@@ -25,11 +25,16 @@ public class Controlador implements ActionListener {
         this.view.bnMultiplicar.addActionListener(this);
     }
     
+   public void iniciar(){
+       view.setTitle("MVC Multiplicar");
+       view.setLocationRelativeTo(null);
+   } 
+   public void actionPerformed(ActionEvent e){
+       model.setNumero1(Integer.parseInt(view.txtNumeroUno.getText()));
+       model.setNumero2(Integer.parseInt(view.txtNumeroDos.getText()));
+       model.Multiplicar();
+       view.txtResultado.setText(String.valueOf (model.getResultado()));
+   }
     
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }
