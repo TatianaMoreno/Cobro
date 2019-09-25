@@ -6,14 +6,17 @@
 package modelo;
 
 /**
- *
- * @author Tatiana Moreno
+ *  Clase modelo
+ * @author Tatiana Moreno, Andres Chila
  */
 public class Modelo {
+    //Guarda el valor del primer numero al que vamos a multiplicar 
     private int numero1;
+    //Guarda el valor del segundo numero al que vamos a multiplicar 
     private int numero2;
+    //Guarda el valor de la multiplicacion  
     private int resultado;
-
+    
     public int getNumero1() {
         return numero1;
     }
@@ -38,7 +41,10 @@ public class Modelo {
         this.resultado = resultado;
     }
     
-    
+    /**
+     * Es el metodo que realiza la multiplicacion 
+     * @return el resultado de la multiplicacion
+     */
     public int Multiplicar(){
         this.resultado=this.numero1*this.numero2;
             return this.resultado;
