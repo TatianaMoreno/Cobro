@@ -14,7 +14,7 @@
                         <b>
                             <h:outputText value="Nombre:"/>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <h:inputText value="${ingresoDatos.nombre}" required="true"/>
+                            <h:inputText value="#{ingresoDatos.nombre}" required="true"/>
                         </b>
                     </big>
                 </big>
@@ -27,7 +27,7 @@
                         <b>
                             <h:outputText value="Apellido: "/>
                             &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                            <h:inputText value="${ingresoDatos.apellido}" required="true"/>
+                            <h:inputText value="#{ingresoDatos.apellido}" required="true"/>
                         </b>
                     </big>
                 </big>
@@ -66,7 +66,6 @@
                         <h:selectOneRadio value="#{ingresoDatos.genero}">
                            <f:selectItem itemValue="Masculino" itemLabel="Masculino"/>
                            <f:selectItem itemValue="Femenino" itemLabel="Femenino"/>
-                           <f:selectItem itemValue="Indefinido" itemLabel="Indefinido"/>
                         </h:selectOneRadio> 
                     </big>
                 </big>
@@ -100,7 +99,7 @@
                     <big>
                         <h:selectOneRadio value="#{ingresoDatos.ubicacion}">
                             <f:selectItem itemValue="Facatativa" itemLabel="Facatativa"/>
-                            <f:selectItem itemValue="Afueras de Facatativa" itemLabel="Afueras de Facatativa"/>
+                            <f:selectItem itemValue="Afuera" itemLabel="Afueras de Facatativa"/>
                         </h:selectOneRadio> 
                     </big>
                 </big>

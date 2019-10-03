@@ -7,7 +7,24 @@
     </h:head>
     <h:body>
         <form>
-            
+            <h:outputText value="#{cuentaCobro.sexo}: "/>
+            <h:outputText value ="#{cuentaCobro.ingresoDatos.nombre} "/>
+            <h:outputText value ="#{cuentaCobro.ingresoDatos.apellido} "/>
+            <br></br><br></br>
+            <h:outputText value="Por su profesion: "/>
+            <h:outputText value="#{cuentaCobro.ingresoDatos.profesion}"/>
+            <br></br><br></br>
+            <h:outputText value="y sus idiomas: "/>
+            <h:outputText value="#{cuentaCobro.idiomasConcatenados}"/>
+            <br></br><br></br>
+            <h:outputText value="su vocacion en: "/>
+            <h:outputText value="#{cuentaCobro.ingresoDatos.ubicacion}"/>
+            <br></br><br></br>
+            <h:outputText value="y los dias trabajados: "/>
+            <h:outputText value="#{cuentaCobro.ingresoDatos.diasLaborados}"/>
+            <br></br><br></br>
+            <h:outputText value="su cuenta es por: "/>
+            <h:outputText value="#{cuentaCobro.sueldo}"/>
         </form>
     </h:body>
 </html>
