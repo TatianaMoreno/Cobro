@@ -1,12 +1,132 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Ingreso de Datos</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h:form>
+            <tt>
+                <big>
+                    <big>
+                        <b>
+                            <h:outputText value="Nombre:"/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <h:inputText value="" required="true"/>
+                        </b>
+                    </big>
+                </big>
+            </tt>
+            <br></br>
+            <br></br>
+            <tt>
+                <big>
+                    <big>
+                        <b>
+                            <h:outputText value="Apellido: "/>
+                            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                            <h:inputText value="" required="true"/>
+                        </b>
+                    </big>
+                </big>
+            </tt>
+            <br></br>
+            <br></br>
+            <tt>
+                <big>
+                    <big>
+                        <b>
+                            <h:outputText value="Profesion: "/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                        </b>
+                    </big>
+                </big>
+            </tt>
+            <select value="">
+                <option value="Ingeniero">Ingeniero</option>
+                <option value="Tecnologo">Tecnologo</option>
+                <option value="Tecnico">Tecnico</option>
+                <option value="Auxiliar">Auxiliar</option>
+            </select>
+            <br></br>
+            <br></br>
+            <tt>
+                <big>
+                    <big>
+                        <b>
+                            <h:outputText value="Genero: "/>
+                        </b>
+                    </big>
+                </big>
+            </tt>
+            <tt>
+                <big>
+                    <big>
+                        <h:selectOneRadio value="">
+                           <f:selectItem itemValue="Masculino" itemLabel="Masculino"/>
+                           <br></br>
+                           <f:selectItem itemValue="Femenino" itemLabel="Femenino"/>
+                           <f:selectItem itemValue="Indefinido" itemLabel="Indefinido"/>
+                        </h:selectOneRadio> 
+                    </big>
+                </big>
+            </tt>
+            <br></br>
+            <tt><big><big><b><h:outputText value="Idioma: "/></b></big></big></tt>
+            <tt>
+                <big>
+                    <big>
+                        <h:selectManyCheckbox value="" >
+                          <f:selectItem itemValue="Español" itemLabel="Español"/>
+                          <br></br>
+                          <f:selectItem itemValue="Frances" itemLabel="Frances"/>
+                          <f:selectItem itemValue="Ingles" itemLabel="Ingles"/>
+                          <f:selectItem itemValue="Aleman" itemLabel="Aleman"/>
+                         </h:selectManyCheckbox> 
+                    </big>
+                </big>
+            </tt>
+            <br></br>
+            <tt>
+                <big>
+                    <big>
+                        <b>
+                            <h:outputText value="Ubicacion: "/> 
+                        </b>
+                    </big>
+                </big>
+            </tt>
+            <tt>
+                <big>
+                    <big>
+                        <h:selectOneRadio value="">
+                            <f:selectItem itemValue="Facatativa" itemLabel="Facatativa"/>
+                            <br></br>
+                            <f:selectItem itemValue="Afueras de Facatativa" itemLabel="Afueras de Facatativa"/>
+                        </h:selectOneRadio> 
+                    </big>
+                </big>
+            </tt>
+            <br></br>
+            <tt>
+                <big>
+                    <big>
+                        <b>
+                            <h:outputText value="Dias trabajados: "/>
+                        </b>
+                    </big>
+                </big>
+            </tt>
+            <h:inputText value="" required="true"></h:inputText>
+            <br></br>
+            <p align="center"> 
+                <h:commandButton  value = "Generar cuenta de cobro" action="#{login.incrementarValor()}">
+                </h:commandButton>
+            </p>
+                        
+        </h:form>
     </h:body>
+    
 </html>
 
