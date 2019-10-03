@@ -68,9 +68,17 @@ public class CalculaSueldo {
             int subSueldo = 0;
             subSueldo = Integer.parseInt(Double.toString(getPagoProfesion())) * ingresodaDatos.getDiasLaborados();
             for (String s : ingresodaDatos.getIdiomas()) {
-                subSueldo = subSueldo + Integer.parseInt(s);
+                if(s.equals("Español"))
+                    subSueldo = subSueldo + 0;
+                if(s.equals("Ingles"))
+                    subSueldo = subSueldo+250000;
+                if(s.equals("Frances"))
+                    subSueldo = subSueldo+330000;
+                if(s.equals("Aleman"))
+                    subSueldo = subSueldo+500000;
             }
-            subSueldo = subSueldo + Integer.parseInt(ingresodaDatos.getUbicacion());
+            if(ingresodaDatos.getUbicacion().equals("Afuera"))
+            subSueldo = subSueldo + 80000;
             setSueldo(subSueldo);
         }
     }

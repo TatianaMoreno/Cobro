@@ -28,9 +28,7 @@ public class cuentaCobro implements Serializable{
     private String sexo;
     private double sueldo;
     private String idiomasConcatenados;
-    private ingresoDatos datos= new ingresoDatos();
     
-        
     public cuentaCobro() {
         calculaSueldo();
     }
