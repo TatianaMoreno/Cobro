@@ -6,15 +6,20 @@
 package com.udec.cuentascobro.controlador;
 
 import java.io.Serializable;
+import javax.annotation.ManagedBean;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
+
+import javax.faces.bean.ViewScoped;
+
 
 /**
  *
  * @author tmore
  */
-@Named(value = "ingresoDatos")
+@ManagedBean(value = "ingresoDatos")
 @Dependent
+@ViewScoped
 public class ingresoDatos implements Serializable{
     private String nombre;
     private String apellido;

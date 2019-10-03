@@ -9,6 +9,7 @@ import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
+import javax.inject.Inject;
 
 /**
  *
@@ -21,13 +22,19 @@ public class cuentaCobro implements Serializable{
     /**
      * Creates a new instance of cuentaCobro
      */
+    private ingresoDatos ingresoDatos;
+    @Inject
     public cuentaCobro() {
     }
-    /**
-     * @PostConstruct para que la vista primero haga este metodo
-     */
-    @PostConstruct
-    public void cargarDatos(){
-        
+    
+    public ingresoDatos getIngresoDatos() {
+        return ingresoDatos;
     }
+
+    public void setIngresoDatos(ingresoDatos ingresoDatos) {
+        this.ingresoDatos = ingresoDatos;
+    }
+    
+    
+    
 }
