@@ -5,6 +5,7 @@
  */
 package com.udec.cuentascobro.controlador;
 
+import java.io.Serializable;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 
@@ -14,12 +15,74 @@ import javax.enterprise.context.Dependent;
  */
 @Named(value = "ingresoDatos")
 @Dependent
-public class ingresoDatos {
-
+public class ingresoDatos implements Serializable{
+    private String nombre;
+    private String apellido;
+    private String profesion;
+    private String genero;
+    private String[] idiomas;
+    private String ubicacion;
+    private int diasLaborados;
     /**
      * Creates a new instance of ingresoDatos
      */
     public ingresoDatos() {
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getProfesion() {
+        return profesion;
+    }
+
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String[] getIdiomas() {
+        return idiomas;
+    }
+
+    public void setIdiomas(String[] idiomas) {
+        this.idiomas = idiomas;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public int getDiasLaborados() {
+        return diasLaborados;
+    }
+
+    public void setDiasLaborados(int diasLaborados) {
+        this.diasLaborados = diasLaborados;
     }
     
 }

@@ -5,6 +5,8 @@
  */
 package com.udec.cuentascobro.controlador;
 
+import java.io.Serializable;
+import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 
@@ -14,12 +16,18 @@ import javax.enterprise.context.Dependent;
  */
 @Named(value = "cuentaCobro")
 @Dependent
-public class cuentaCobro {
+public class cuentaCobro implements Serializable{
 
     /**
      * Creates a new instance of cuentaCobro
      */
     public cuentaCobro() {
     }
-    
+    /**
+     * @PostConstruct para que la vista primero haga este metodo
+     */
+    @PostConstruct
+    public void cargarDatos(){
+        
+    }
 }
