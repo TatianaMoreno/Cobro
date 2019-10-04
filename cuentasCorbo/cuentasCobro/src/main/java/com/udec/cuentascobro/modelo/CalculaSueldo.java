@@ -71,7 +71,7 @@ public class CalculaSueldo {
      * @return 
      */
     public boolean validarDiasTrabajados() {
-        if (ingresodaDatos.getDiasLaborados() == 0) {
+        if (ingresodaDatos.getDiasLaborados() <= 0) {
             setSueldo(0);
             return false;
         } else {
