@@ -5,7 +5,9 @@
  */
 package com.udec.cuentascobro.modelo;
 
+import com.udec.cuentascobro.controlador.cuentaCobro;
 import com.udec.cuentascobro.controlador.ingresoDatos;
+import javax.inject.Inject;
 
 /**
  *
@@ -14,22 +16,26 @@ import com.udec.cuentascobro.controlador.ingresoDatos;
 public class CalculaSueldo {
 
     private double sueldo;
-    private String señore;
     private String idiomas;
     private double pagoProfesion;
+    
     private ingresoDatos ingresodaDatos;
+    
+    /**
+     * C de la clase
+     * @param ingresodaDatos
+     * @param cuentaCobro 
+     */
+    public CalculaSueldo(ingresoDatos ingresodaDatos) {
+        this.ingresodaDatos = ingresodaDatos;
+        
+    }
+
 
     //private ingresoDatos ingresodaDatos = new ingresoDatos();
-    /**
-     * Constructor de la clase
-     *
-     * @param ingreso
-     */
-    public CalculaSueldo(ingresoDatos ingreso) {
-        this.ingresodaDatos = ingreso;
-        validarSexo();
-        calculaSueldo();
-    }
+    
+    
+    
 
     public void hallarPagoProfesion() {
         if (ingresodaDatos.getProfesion().equals("Ingeniero")) {
@@ -46,13 +52,7 @@ public class CalculaSueldo {
         }
     }
 
-    public void validarSexo() {
-        if (ingresodaDatos.getGenero().equals("Masculino")) {
-            setSeñore("Señor: ");
-        } else {
-            setSeñore("Señora: ");
-        }
-    }
+    
 
     public boolean validarDiasTrabajados() {
         if (ingresodaDatos.getDiasLaborados() == 0) {
@@ -65,7 +65,7 @@ public class CalculaSueldo {
 
     public void calculaSueldo() {
         if (validarDiasTrabajados()) {
-            int subSueldo = 0;
+            double subSueldo = 0;
             subSueldo = Integer.parseInt(Double.toString(getPagoProfesion())) * ingresodaDatos.getDiasLaborados();
             for (String s : ingresodaDatos.getIdiomas()) {
                 if(s.equals("Español"))
@@ -99,14 +99,7 @@ public class CalculaSueldo {
         this.sueldo = sueldo;
     }
 
-    public String getSeñore() {
-        return señore;
-    }
-
-    public void setSeñore(String señore) {
-        this.señore = señore;
-    }
-
+    
     public String getIdiomas() {
         return idiomas;
     }
@@ -122,5 +115,16 @@ public class CalculaSueldo {
     public void setPagoProfesion(double pagoProfesion) {
         this.pagoProfesion = pagoProfesion;
     }
+
+    public ingresoDatos getIngresodaDatos() {
+        return ingresodaDatos;
+    }
+
+    public void setIngresodaDatos(ingresoDatos ingresodaDatos) {
+        this.ingresodaDatos = ingresodaDatos;
+    }
+
+    
+    
 
 }

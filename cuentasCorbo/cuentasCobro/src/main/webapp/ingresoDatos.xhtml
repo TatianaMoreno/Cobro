@@ -64,8 +64,9 @@
                 <big>
                     <big>
                         <h:selectOneRadio value="#{ingresoDatos.genero}">
-                           <f:selectItem itemValue="Masculino" itemLabel="Masculino"/>
-                           <f:selectItem itemValue="Femenino" itemLabel="Femenino"/>
+                           <f:selectItem itemValue="Señor " itemLabel="Masculino"/>
+                           <f:selectItem itemValue="Señora " itemLabel="Femenino"/>
+                           <f:selectItem itemValue="Señor/a" itemLabel="Ambos"/>
                         </h:selectOneRadio> 
                     </big>
                 </big>
@@ -76,7 +77,6 @@
                 <big>
                     <big>
                         <h:selectManyCheckbox value="#{ingresoDatos.idiomas}" >
-                          <f:selectItem itemValue="Español" itemLabel="Español"/>
                           <f:selectItem itemValue="Frances" itemLabel="Frances"/>
                           <f:selectItem itemValue="Ingles" itemLabel="Ingles"/>
                           <f:selectItem itemValue="Aleman" itemLabel="Aleman"/>

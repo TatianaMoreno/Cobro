@@ -7,7 +7,9 @@ package com.udec.cuentascobro.controlador;
 
 import com.udec.cuentascobro.modelo.CalculaSueldo;
 import java.io.Serializable;
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedProperty;
 import javax.inject.Named;
 import javax.inject.Inject;
 
@@ -30,13 +32,12 @@ public class cuentaCobro implements Serializable{
     private String idiomasConcatenados;
     
     public cuentaCobro() {
-        calculaSueldo();
     }
+    @PostConstruct
     public void calculaSueldo(){
-        CalculaSueldo calcula = new CalculaSueldo(ingresoDatos);
-        setSexo(calcula.getSeñore());
-        setSueldo(calcula.getSueldo());
-        setIdiomasConcatenados(calcula.getIdiomas());
+        CalculaSueldo calcular=new CalculaSueldo(ingresoDatos);
+        sueldo=(int) calcular.getSueldo();
+        idiomasConcatenados=calcular.getIdiomas();
     }
     public ingresoDatos getIngresoDatos() {
         return ingresoDatos;
@@ -58,7 +59,7 @@ public class cuentaCobro implements Serializable{
         return sueldo;
     }
 
-    public void setSueldo(double sueldo) {
+    public void setSueldo(int sueldo) {
         this.sueldo = sueldo;
     }
 
@@ -69,7 +70,6 @@ public class cuentaCobro implements Serializable{
     public void setIdiomasConcatenados(String idiomasConcatenados) {
         this.idiomasConcatenados = idiomasConcatenados;
     }
-    
-    
+        
     
 }

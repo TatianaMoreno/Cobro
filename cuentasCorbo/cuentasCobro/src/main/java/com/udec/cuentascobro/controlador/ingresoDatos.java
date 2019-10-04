@@ -5,8 +5,10 @@
  */
 package com.udec.cuentascobro.controlador;
 
+
 import java.io.Serializable;;
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 /**
  *
@@ -83,5 +85,7 @@ public class ingresoDatos implements Serializable{
     public void setDiasLaborados(int diasLaborados) {
         this.diasLaborados = diasLaborados;
     }
+
+    
     
 }
