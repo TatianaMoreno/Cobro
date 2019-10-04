@@ -51,8 +51,11 @@ public class CalculaSueldo {
     public void validarSexo() {
         if (ingresodaDatos.getGenero().equals("Masculino")) {
             setSeñore("Señor: ");
-        } else {
+        } else if((ingresodaDatos.getGenero().equals("Femenino"))){
             setSeñore("Señora: ");
+        }
+        else{
+            setSeñore("Señor@");
         }
     }
 
@@ -88,7 +91,7 @@ public class CalculaSueldo {
     public void concatenarIdiomas() {
         String subidioma = "";
         for (String s : ingresodaDatos.getIdiomas()) {
-            subidioma = subidioma + ", " + s;
+            subidioma = subidioma + s+", ";
         }
         setIdiomas(subidioma);
     }

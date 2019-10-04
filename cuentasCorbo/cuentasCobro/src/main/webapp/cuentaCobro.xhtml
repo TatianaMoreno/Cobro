@@ -6,6 +6,7 @@
         <title>Cuenta de Cobro</title>
     </h:head>
     <h:body>
+        <H2>RECIBO DE PAGO</H2>
         <form>
             <h:outputText value="#{cuentaCobro.ingresoDatos.genero}: "/>
             <h:outputText value ="#{cuentaCobro.ingresoDatos.nombre} "/>
@@ -25,6 +26,10 @@
             <br></br><br></br>
             <h:outputText value="su cuenta es por: "/>
             <h:outputText value="#{cuentaCobro.sueldo}"/>
+            <br></br><br></br><br></br><br></br>
+            <p align="center"> 
+                <h:commandButton  value = "Volver" action="ingresoDatos"/>
+            </p>
         </form>
     </h:body>
 </html>
