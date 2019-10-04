@@ -59,4 +59,13 @@ public class cuentaCobro{
     public void setIdiomasConcatenados(String idiomasConcatenados) {
         this.idiomasConcatenados = idiomasConcatenados;
     }
+
+    public ingresoDatos getIngresoDatos() {
+        return ingresoDatos;
+    }
+
+    public void setIngresoDatos(ingresoDatos ingresoDatos) {
+        this.ingresoDatos = ingresoDatos;
+    }
+    
 }
