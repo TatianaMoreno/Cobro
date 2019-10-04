@@ -48,7 +48,7 @@ public class cuentaCobro{
         return sueldo;
     }
 
-    public void setSueldo(double sueldo) {
+    public void setSueldo(int sueldo) {
         this.sueldo = sueldo;
     }
 
@@ -59,14 +59,4 @@ public class cuentaCobro{
     public void setIdiomasConcatenados(String idiomasConcatenados) {
         this.idiomasConcatenados = idiomasConcatenados;
     }
-
-    public ingresoDatos getIngresoDatos() {
-        return ingresoDatos;
-    }
-
-    public void setIngresoDatos(ingresoDatos ingresoDatos) {
-        this.ingresoDatos = ingresoDatos;
-    }
-    
-
 }

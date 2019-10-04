@@ -83,5 +83,7 @@ public class ingresoDatos{
     public void setDiasLaborados(int diasLaborados) {
         this.diasLaborados = diasLaborados;
     }
+
+    
     
 }
