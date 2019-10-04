@@ -9,18 +9,25 @@ import javax.enterprise.context.RequestScoped;
 
 import javax.inject.Named;
 /**
- *
- * @author tmore
+ *  Clase controlador del ingreso de datos del usuario
+ * @author Andres Chila, Tatiana Moreno
  */
 @Named(value = "ingresoDatos")
 @RequestScoped
 public class ingresoDatos{
+    //Variable que guarda el nombre del usuario
     private String nombre;
+    //Variable que guarda el apellido del usuario
     private String apellido;
+    //Variable que guarda la profesion del usuario
     private String profesion;
+    //Variable que guarda el genero del usuario
     private String genero;
+    //Variable que guarda los idiomas del usuario
     private String[] idiomas;
+    //Variable que guarda la ubicacions del usuario
     private String ubicacion;
+    //Variable que guarda los dias laborales del usuario
     private int diasLaborados;
     /**
      * Creates a new instance of ingresoDatos
