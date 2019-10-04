@@ -13,10 +13,10 @@ import com.udec.cuentascobro.controlador.ingresoDatos;
  */
 public class CalculaSueldo {
 
-    private double sueldo;
+    private int sueldo;
     private String señore;
     private String idiomas;
-    private double pagoProfesion;
+    private int pagoProfesion;
     private ingresoDatos ingresodaDatos;
 
     //private ingresoDatos ingresodaDatos = new ingresoDatos();
@@ -28,6 +28,8 @@ public class CalculaSueldo {
     public CalculaSueldo(ingresoDatos ingreso) {
         this.ingresodaDatos = ingreso;
         validarSexo();
+        hallarPagoProfesion();
+        concatenarIdiomas();
         calculaSueldo();
     }
 
@@ -66,7 +68,7 @@ public class CalculaSueldo {
     public void calculaSueldo() {
         if (validarDiasTrabajados()) {
             int subSueldo = 0;
-            subSueldo = Integer.parseInt(Double.toString(getPagoProfesion())) * ingresodaDatos.getDiasLaborados();
+            subSueldo = getPagoProfesion() * ingresodaDatos.getDiasLaborados();
             for (String s : ingresodaDatos.getIdiomas()) {
                 if(s.equals("Español"))
                     subSueldo = subSueldo + 0;
@@ -86,16 +88,16 @@ public class CalculaSueldo {
     public void concatenarIdiomas() {
         String subidioma = "";
         for (String s : ingresodaDatos.getIdiomas()) {
-            subidioma = subidioma + " " + s;
+            subidioma = subidioma + ", " + s;
         }
         setIdiomas(subidioma);
     }
 
-    public double getSueldo() {
+    public int getSueldo() {
         return sueldo;
     }
 
-    public void setSueldo(double sueldo) {
+    public void setSueldo(int sueldo) {
         this.sueldo = sueldo;
     }
 
@@ -115,11 +117,11 @@ public class CalculaSueldo {
         this.idiomas = idiomas;
     }
 
-    public double getPagoProfesion() {
+    public int getPagoProfesion() {
         return pagoProfesion;
     }
 
-    public void setPagoProfesion(double pagoProfesion) {
+    public void setPagoProfesion(int pagoProfesion) {
         this.pagoProfesion = pagoProfesion;
     }
 
