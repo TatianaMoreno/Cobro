@@ -5,16 +5,16 @@
  */
 package com.udec.cuentascobro.controlador;
 
-import java.io.Serializable;;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
+
 import javax.inject.Named;
 /**
  *
  * @author tmore
  */
 @Named(value = "ingresoDatos")
-@SessionScoped
-public class ingresoDatos implements Serializable{
+@RequestScoped
+public class ingresoDatos{
     private String nombre;
     private String apellido;
     private String profesion;
