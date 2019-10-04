@@ -6,8 +6,9 @@
 package com.udec.cuentascobro.controlador;
 
 import com.udec.cuentascobro.modelo.CalculaSueldo;
-import java.io.Serializable;
-import javax.enterprise.context.SessionScoped;
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
+
 import javax.inject.Named;
 import javax.inject.Inject;
 
@@ -16,34 +17,23 @@ import javax.inject.Inject;
  * @author tmore
  */
 @Named(value = "cuentaCobro")
-@SessionScoped
-public class cuentaCobro implements Serializable{
+@RequestScoped
+public class cuentaCobro{
 
-    /**
-     * Creates a new instance of cuentaCobro
-     */
-    //private ingresoDatos ingresoDatos;
-    @Inject
-    private ingresoDatos ingresoDatos;
     private String sexo;
     private double sueldo;
     private String idiomasConcatenados;
     
-    public cuentaCobro() {
-        calculaSueldo();
-    }
-    public void calculaSueldo(){
+    @Inject
+    private ingresoDatos ingresoDatos;
+
+    
+    @PostConstruct
+    public void calculaSueldo() {
         CalculaSueldo calcula = new CalculaSueldo(ingresoDatos);
         setSexo(calcula.getSeñore());
         setSueldo(calcula.getSueldo());
         setIdiomasConcatenados(calcula.getIdiomas());
-    }
-    public ingresoDatos getIngresoDatos() {
-        return ingresoDatos;
-    }
-
-    public void setIngresoDatos(ingresoDatos ingresoDatos) {
-        this.ingresoDatos = ingresoDatos;
     }
 
     public String getSexo() {
@@ -69,7 +59,14 @@ public class cuentaCobro implements Serializable{
     public void setIdiomasConcatenados(String idiomasConcatenados) {
         this.idiomasConcatenados = idiomasConcatenados;
     }
+
+    public ingresoDatos getIngresoDatos() {
+        return ingresoDatos;
+    }
+
+    public void setIngresoDatos(ingresoDatos ingresoDatos) {
+        this.ingresoDatos = ingresoDatos;
+    }
     
-    
-    
+
 }
